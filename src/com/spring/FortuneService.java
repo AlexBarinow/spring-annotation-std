@@ -1,2 +1,6 @@
-package com.spring;public class FortuneService {
+package com.spring;
+
+public interface FortuneService {
+
+    public String getFortune();
 }
