@@ -1,11 +1,12 @@
-package com.spring;
+package com.spring.beans;
 
+import com.spring.interfaces.FortuneService;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
 @Component("rand")
-public class RandomFortuneService implements FortuneService{
+public class RandomFortuneService implements FortuneService {
 
     private String[] rand = {
 

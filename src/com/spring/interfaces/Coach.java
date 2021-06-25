@@ -1,8 +1,12 @@
-package com.spring;
+package com.spring.interfaces;
 
 public interface Coach {
 
     public String getDailyWorkout();
 
     public String getDailyFortune();
+
+    public void preRun();
+
+    public void afterRun();
 }
