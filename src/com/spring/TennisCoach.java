@@ -1,6 +1,7 @@
 package com.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -9,6 +10,7 @@ public class TennisCoach implements Coach{
 
 
     @Autowired
+    @Qualifier("HFS")
     private FortuneService fortuneService;
 
     //Autowired annotation checks if there is a realisation of the interface and automatically injects it to the constructor.
