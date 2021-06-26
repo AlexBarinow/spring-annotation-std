@@ -4,6 +4,7 @@ import com.spring.interfaces.Coach;
 import com.spring.interfaces.FortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -17,15 +18,20 @@ public class TennisCoach implements Coach {
     @Qualifier("HFS")
     private FortuneService fortuneService;
 
-    //Autowired annotation checks if there is a realisation of the interface and automatically injects it to the constructor.
-    //Do not forget to mark realisation class with a @Component annotation so Spring could see it
 
-   /*
-   @Autowired
-    public void setFortuneService(FortuneService theFortuneService){
-        this.fortuneService = theFortuneService;
+    @Value("${email}")
+    private String email;
 
-    }*/
+    @Override
+    public void getEmail() {
+        System.out.println(email);
+    }
+
+    public TennisCoach(FortuneService happyFortuneService){
+        this.fortuneService=happyFortuneService;
+
+        System.out.println("Constructor of tennis coach has worked");
+    }
 
     @Override
     public String getDailyFortune(){

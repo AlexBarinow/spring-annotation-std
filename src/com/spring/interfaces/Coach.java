@@ -8,5 +8,7 @@ public interface Coach {
 
     public void preRun();
 
+    public void getEmail();
+
     public void afterRun();
 }

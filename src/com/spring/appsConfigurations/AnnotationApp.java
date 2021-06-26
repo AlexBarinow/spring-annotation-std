@@ -9,13 +9,16 @@ public class AnnotationApp {
 
 
         //Here is a new way to configure the Spring application
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(Config.class);
 
         Coach theCoach = context.getBean("tennisCoach", Coach.class);
 
         System.out.println(theCoach.getDailyWorkout());
 
         System.out.println(theCoach.getDailyFortune());
+
+        theCoach.getEmail();
 
         context.close();
     }
